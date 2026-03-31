@@ -36,9 +36,71 @@ void mergeSort(int low, int high)
 {
     if (low >= high)
     {
-        return; // menghentikan rekursi
+        return; 
     }
     
+    int mid = (low + high) / 2;
+
+    mergeSort(low, mid);
+
+    mergeSort(mid + 1, high);
+
+    // Inisialisasi indeks untuk proses penggabungan
+    int i = low;       
+    int j = mid + 1;   
+    int k = low;  
+
+    while (i <= mid && j <= high)
+    {
+        
+        if (arr[i] <= arr[j])
+        {
+            B[k] = arr[i]; 
+            i++;
+        }
+        else
+        {
+            B[k] = arr[j]; 
+            j++;
+        }
+        k++; 
+    }
+
+    while (j <= high)
+    {
+        B[k] = arr[j];
+        j++;
+        k++;
+    }
+
+    
+    while (i <= mid)
+    {
+        B[k] = arr[i];
+        i++;
+        k++;
+    }
+    for (int x = low; x <= high; x++)
+    {
+        arr[x] = B[x];
+    }
+}
+
+void output()
+{
+    cout << "\nData setelah diurutkan (Merge Sort): ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+int main()
+{
+    input();              // memanggil fungsi input
+    mergeSort(0, n - 1);  // memulai proses merge sort
+    output();             // menampilkan hasil pengurutan
+}
   
 
 
