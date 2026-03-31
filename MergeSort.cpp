@@ -21,6 +21,10 @@ void input()
         }
     }
 
+    cout << "\n--------------------------------" << endl;
+    cout << "\nInputkan isi elemt array" << endl;
+    cout << "\n--------------------------------" << endl;
+
     
     
     
