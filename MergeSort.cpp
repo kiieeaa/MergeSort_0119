@@ -6,6 +6,10 @@ int n;
 
 void input()
 {
+    while (true)
+        {
+        cout << "Masukkan Panjang element array : ";
+        cin >> n;
 
     
     
